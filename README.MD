@@ -27,7 +27,7 @@ Projeto de automação de testes para a API Cat Facts e a tela de consulta de us
 
 ## Estrutura do Projeto
 
-automation-matera/
+## automation-matera/
 ├── src
 │   └── test
 │       ├── java
