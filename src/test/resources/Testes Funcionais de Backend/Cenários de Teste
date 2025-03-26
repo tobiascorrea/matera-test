@@ -1,0 +1,33 @@
+Feature: GET /breeds API
+
+  # Happy paths
+  Scenario: Retrieve list of breeds successfully
+    Given the API is available
+    When a GET request is made to "/breeds"
+    Then the response status should be 200
+    And the response should contain a list of cat breeds
+
+  Scenario: Retrieve breeds with pagination parameters
+    Given the API is available
+    When a GET request is made to "/breeds?page=1&limit=10"
+    Then the response status should be 200
+    And the response should contain at most 10 cat breeds
+
+  Scenario: Retrieve breeds with valid filter parameters
+    Given the API is available
+    When a GET request is made to "/breeds?origin=Egypt"
+    Then the response status should be 200
+    And the response should contain cat breeds originating from "Egypt"
+
+  # Unhappy paths
+  Scenario: Retrieve breeds with invalid query parameter
+    Given the API is available
+    When a GET request is made to "/breeds?invalidParam=value"
+    Then the response status should be 400
+    And the response should contain an error message indicating an invalid parameter
+
+  Scenario: Using an unsupported HTTP method on /breeds
+    Given the API is available
+    When a POST request is made to "/breeds"
+    Then the response status should be 405
+    And the response should contain an error message "Method Not Allowed"

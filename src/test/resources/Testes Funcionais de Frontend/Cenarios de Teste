@@ -1,0 +1,51 @@
+Feature: User Filter on ERP
+
+  # Happy paths
+  Scenario: Filter users by valid name
+    Given the user is on the Users page
+    When the user enters a valid name "John Doe" in the filter field
+    And the user clicks on the "Search" button
+    Then the system should display a list of users matching "John Doe"
+
+  Scenario: Filter users by valid email
+    Given the user is on the Users page
+    When the user enters a valid email "john@example.com" in the filter field
+    And the user clicks on the "Search" button
+    Then the system should display a list of users matching "john@example.com"
+
+  Scenario: Filter users by active status
+    Given the user is on the Users page
+    When the user selects "Active" from the status dropdown filter
+    And the user clicks on the "Search" button
+    Then the system should display all active users
+
+  Scenario: Filter users by person type "Pessoa Física"
+    Given the user is on the Users page
+    When the user selects "Pessoa Física" from the person type dropdown
+    And the user clicks on the "Search" button
+    Then the system should display only users registered as "Pessoa Física"
+
+  Scenario: Filter users by person type "Pessoa Jurídica"
+    Given the user is on the Users page
+    When the user selects "Pessoa Jurídica" from the person type dropdown
+    And the user clicks on the "Search" button
+    Then the system should display only users registered as "Pessoa Jurídica"
+
+  Scenario: Clear filters resets all inputs
+    Given the user has applied multiple filters (e.g., name "John Doe", email "john@example.com", and person type "Pessoa Física")
+    When the user clicks on the "Clear Filters" button
+    Then all filter fields should be reset to their default values
+    And the system should display the default user list
+
+  # Unhappy paths
+  Scenario: Filter users with invalid characters in name
+    Given the user is on the Users page
+    When the user enters an invalid string "!@#$$%" in the name filter field
+    And the user clicks on the "Search" button
+    Then the system should display an error message "Invalid input for name filter"
+
+  Scenario: Filter users with empty input and no selection
+    Given the user is on the Users page
+    When the user leaves all filter fields empty
+    And the user clicks on the "Search" button
+    Then the system should display a message "Please enter at least one filter criteria"
