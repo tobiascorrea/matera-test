@@ -25,6 +25,15 @@ Projeto de automação de testes para a API Cat Facts e a tela de consulta de us
 - **Maven** instalado e configurado no PATH
 - IDE de sua preferência (por exemplo, IntelliJ IDEA, Eclipse, VSCode) para executar a classe Runner
 
+## Configurações Adicionais
+
+### Maven Compiler Plugin
+O projeto está configurado para compilar utilizando Java 11. Caso deseje atualizar para outra versão, ajuste as propriedades:
+ `<maven.compiler.source>`, `<maven.compiler.target>` e a tag `<release>` no `pom.xml`.
+
+### Relatórios de Teste
+Após a execução via Maven, os relatórios de teste estarão disponíveis na pasta `target/surefire-reports`.
+
 
 ## Como Baixar o Projeto
 
