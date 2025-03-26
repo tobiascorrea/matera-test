@@ -30,7 +30,7 @@ Projeto de automação de testes para a API Cat Facts e a tela de consulta de us
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/automation-matera.git
+   git clone https://github.com/tobiascorrea/automation-matera.git
 
 2. **Acesse o diretório do projeto:**
    ```bash
