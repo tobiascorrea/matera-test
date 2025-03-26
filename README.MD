@@ -25,22 +25,6 @@ Projeto de automação de testes para a API Cat Facts e a tela de consulta de us
 - **Maven** instalado e configurado no PATH
 - IDE de sua preferência (por exemplo, IntelliJ IDEA, Eclipse, VSCode) para executar a classe Runner
 
-## Estrutura do Projeto
-
-## automation-matera/
-├── src
-│   └── test
-│       ├── java
-│       │   ├── features
-│       │   │   └── breeds.feature
-│       │   ├── runners
-│       │   │   └── TestRunner.java
-│       │   └── stepdefinitions
-│       │       └── BreedsSteps.java
-│       └── resources
-├── pom.xml
-└── README.md
-
 
 ## Como Baixar o Projeto
 
