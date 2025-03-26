@@ -5,6 +5,9 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -44,4 +47,11 @@ public class BreedsSteps {
     public void verifyErrorMessage(String errorMessage) {
         assertThat(response.asString(), containsString(errorMessage));
     }
+
+    @Then("the response should contain exactly {int} cat breeds")
+    public void verifyNumberOfCatBreeds(int expectedCount) {
+        List<?> breeds = response.jsonPath().getList("data");
+        assertThat(breeds.size(), is(expectedCount));
+    }
+
 }
