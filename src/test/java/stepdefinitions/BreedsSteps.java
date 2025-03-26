@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -52,6 +53,12 @@ public class BreedsSteps {
     public void verifyNumberOfCatBreeds(int expectedCount) {
         List<?> breeds = response.jsonPath().getList("data");
         assertThat(breeds.size(), is(expectedCount));
+    }
+
+    @Then("the response schema should match the expected contract")
+    public void validateResponseSchema() {
+        response.then().assertThat()
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("breeds-schema.json"));
     }
 
 }

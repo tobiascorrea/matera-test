@@ -21,3 +21,9 @@ Feature: Automated Testing of GET /breeds Endpoint
     Then the response status should be 200
     And the response should contain exactly 5 cat breeds
 
+ # Happy path
+  Scenario: Validate API response schema
+    Given the API is up and running
+    When a GET request is sent to "/breeds"
+    Then the response status should be 200
+    And the response schema should match the expected contract
