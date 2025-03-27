@@ -32,7 +32,7 @@ O projeto está configurado para compilar utilizando Java 11. Caso deseje atuali
  `<maven.compiler.source>`, `<maven.compiler.target>` e a tag `<release>` no `pom.xml`.
 
 ### Relatórios de Teste
-Após a execução via Maven, os relatórios de teste estarão disponíveis na pasta `target/surefire-reports`.
+Após a execução via Maven, os relatórios de teste estarão disponíveis na pasta `target/ExtentReport.html`.
 
 
 ## Como Baixar o Projeto
