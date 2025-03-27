@@ -34,6 +34,13 @@ O projeto está configurado para compilar utilizando Java 11. Caso deseje atuali
 ### Relatórios de Teste
 Após a execução via Maven, os relatórios de teste estarão disponíveis na pasta `target/ExtentReport.html`.
 
+### Relatórios de Cobertura
+Os relatórios de cobertura de testes estarão disponíveis na pasta `target/site/jacoco/index.html`.
+Os relatórios são gerados pelo plugin Jacoco e podem ser visualizados em um navegador:
+
+```bash
+   mvn clean test jacoco:report
+```
 
 ## Como Baixar o Projeto
 
@@ -63,4 +70,3 @@ O Maven utilizará o plugin Surefire para identificar e executar os testes defin
 
 ```bash
    mvn clean test
-
