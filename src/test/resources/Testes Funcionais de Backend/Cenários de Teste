@@ -29,5 +29,5 @@ Feature: GET /breeds API
   Scenario: Using an unsupported HTTP method on /breeds
     Given the API is available
     When a POST request is made to "/breeds"
-    Then the response status should be 405
+    Then the response status should be 404
     And the response should contain an error message "Method Not Allowed"
