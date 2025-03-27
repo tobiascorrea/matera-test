@@ -58,6 +58,7 @@ Após a execução via Maven, os relatórios de teste estarão disponíveis na p
 
 ### Via Maven
 Para executar os testes através do Maven, utilize o comando abaixo:
+
 O Maven utilizará o plugin Surefire para identificar e executar os testes definidos na classe Runner.
 
 ```bash
