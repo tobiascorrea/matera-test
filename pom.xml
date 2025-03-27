@@ -52,11 +52,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Dependência do ExtentReports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>5.0.9</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -70,6 +72,29 @@
                     <release>11</release>
                 </configuration>
             </plugin>
+
+            <!-- Plugin JaCoCo para cobertura de testes -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Plugin Maven Surefire para execução dos testes -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

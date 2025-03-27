@@ -23,6 +23,5 @@ public class Hooks {
         } else {
             scenarioTest.pass("O cenário passou.");
         }
-        extent.flush();
     }
 }
