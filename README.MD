@@ -15,6 +15,13 @@ Projeto de automação de testes para a API Cat Facts e a tela de consulta de us
         - Validação do parâmetro `limit` para restringir o número de resultados retornados.
         - Cenário específico: ao passar um `limit` maior que o máximo permitido, a API retorna os metadados esperados.
 
+  **Como visualizar os testes funcionais Frontend com a escrita em Gherkin:**
+    - Acesse o arquivo `src/test/resources/Testes Funcionais de Frontend` e abra o arquivo `Cenarios de Teste`.
+
+  **Como visualizar os testes funcionais Backend com a escrita em Gherkin:**
+    - Acesse o arquivo `src/test/resources/Testes Funcionais de Backend` e abra o arquivo `Cenarios de Teste`.
+
+
 - **Testes Automatizados:**
     - Implementação dos cenários acima utilizando Cucumber com Java e RestAssured.
     - Os testes estão organizados nas classes de Step Definitions e executados via um Runner (TestRunner.java).
