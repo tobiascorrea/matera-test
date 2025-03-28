@@ -19,6 +19,13 @@ Projeto de automação de testes para a API Cat Facts e a tela de consulta de us
     - Implementação dos cenários acima utilizando Cucumber com Java e RestAssured.
     - Os testes estão organizados nas classes de Step Definitions e executados via um Runner (TestRunner.java).
 
+      **Cenários Cobertos**
+
+      - \*Caminho Feliz:\* Recuperação da lista de raças de gatos
+      - \*Caminho Infeliz:\* Validação de método HTTP incorreto com mensagem de erro
+      - \*Limite de Resultados:\* Verificação da quantidade exata de raças retornadas
+      - \*Validação de Esquema:\* Confirmação do contrato da resposta via schema
+
 ## Pré-requisitos
 
 - **Java 11** (ou versão compatível configurada no projeto)
