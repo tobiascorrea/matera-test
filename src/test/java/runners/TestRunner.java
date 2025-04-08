@@ -8,7 +8,7 @@ import utils.ReportManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features",
+        features = "src/test/resources/features",
         glue = {"stepdefinitions", "hooks", "steps"}
 )
 public class TestRunner {
