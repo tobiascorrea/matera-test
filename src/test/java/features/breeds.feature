@@ -27,3 +27,12 @@ Feature: Automated Testing of GET /breeds Endpoint
     When a GET request is sent to "/breeds"
     Then the response status should be 200
     And the response schema should match the expected contract
+
+  Scenario: Validate response objects contain expected fields
+    Given the API is up and running
+    When a GET request is sent to "/breeds"
+    Then the response status should be 200
+    And the response should contain both "data" and "links" arrays which are not empty
+    And each object in the "data" array should contain the keys "breed, country, origin, coat, pattern"
+    And each object in the "links" array should contain the keys "url, label, active"
+

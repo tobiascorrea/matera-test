@@ -1,42 +1,49 @@
 Feature: User Filter on ERP
 
   # Happy paths
+  ## Filtrar usuários por nome válido
   Scenario: Filter users by valid name
     Given the user is on the Users page
     When the user enters a valid name  in the filter field
     And the user clicks on the "Search" button
     Then the system should display a list of users matching
 
+ ## Filtrar usuários por email válido
   Scenario: Filter users by valid email
     Given the user is on the Users page
     When the user enters a valid email in the filter field
     And the user clicks on the "Search" button
     Then the system should display a list of users matching
 
+ ## Filtrar usuários por status ativo
   Scenario: Filter users by active status
     Given the user is on the Users page
     When the user selects "Active" from the status dropdown filter
     And the user clicks on the "Search" button
     Then the system should display all active users
 
+ ## Filtrar usuários por tipo de pessoa "Pessoa Física"
   Scenario: Filter users by person type "Pessoa Física"
     Given the user is on the Users page
     When the user selects "Pessoa Física" from the person type dropdown
     And the user clicks on the "Search" button
     Then the system should display only users registered as "Pessoa Física"
 
+  ## Filtrar usuários por tipo de pessoa "Pessoa Jurídica"
   Scenario: Filter users by person type "Pessoa Jurídica"
     Given the user is on the Users page
     When the user selects "Pessoa Jurídica" from the person type dropdown
     And the user clicks on the "Search" button
     Then the system should display only users registered as "Pessoa Jurídica"
 
+ ## Limpar filtros reinicia todos os campos
   Scenario: Clear filters resets all inputs
     Given the user has applied multiple filters
     When the user clicks on the "Clear Filters" button
     Then all filter fields should be reset to their default values
     And the system should display the default user list
 
+ ## Filtrar usuários com caracteres inválidos no nome
   # Unhappy paths
   Scenario: Filter users with invalid characters in name
     Given the user is on the Users page
@@ -44,6 +51,7 @@ Feature: User Filter on ERP
     And the user clicks on the "Search" button
     Then the system should display an error message "Invalid input for name filter"
 
+ ## Filtrar usuários com entrada vazia e sem seleção
   Scenario: Filter users with empty input and no selection
     Given the user is on the Users page
     When the user leaves all filter fields empty
